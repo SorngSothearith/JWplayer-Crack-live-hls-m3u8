@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/jwstyle.css">
+</head>
+<body>
+    
+    <div id="jwplayer_container">
+    </div>
+    <script src="./script/jquery.js"></script>
+    <script src="./script/jwplayer.js"></script>
+    <script src="./script/jwsrv.js"></script>
+    <script src="./script/jwplayer.core.controls.js"></script>
+    <script src="./script/provider.hlsjs.js"></script>
+    <script>
+        var playerUrl = window.btoa("https://livehd.malimarcdn.com/hdliveedge00/bayonhd.stream/chunklist.m3u8");
+        var tviOSPath = window.btoa("https://livehd.malimarcdn.com/hdliveedge00/bayonhd.stream/chunklist.m3u8");
+              var tv_player_logo = "https://everyday4k.com/storage/settings/November2019/2EJ19P9hNF9gYdoD2eP3.png";
+              var tv_context_menu = "";
+              var tvTitle = "Everyday4k.com";
+              var trDevice = "pc";            
+              jwplayer("jwplayer_container").setup({
+               playlist: [{
+                sources: [{
+                 file: window.atob(playerUrl),
+                //  file: "https://livehd.malimarcdn.com/hdliveedge00/bayonhd.stream/chunklist.m3u8"
+                }, {
+                 file: window.atob(tviOSPath)
+                //  file: "https://livehd.malimarcdn.com/hdliveedge00/bayonhd.stream/chunklist.m3u8"
+                }],
+                // title: tvTitle
+               }],
+               logo: {
+                file: tv_player_logo,
+                link: "https://everyday4k.com/",
+                position: "top-left"
+               },    
+               androidhls: true,
+               provider: 'http',
+               primary: "flash",
+               stretching: "uniform",
+               width: "100%",
+               height: "460",
+               wmode: "opaque",
+               fallback: "false",
+               abouttext: "Everyday4k",
+               aboutlink: "https://everyday4k.com/",
+               skin: "seven",
+            //    autostart: true,
+              });
+        </script>
+</body>
+</html>
